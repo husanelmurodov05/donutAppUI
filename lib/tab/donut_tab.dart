@@ -19,7 +19,7 @@ class DonutTab extends StatelessWidget {
       padding: EdgeInsets.all(12),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
-        childAspectRatio: 1 / 1.5,
+        childAspectRatio: 1 / 1.55,
       ),
       itemBuilder: (context, index) {
         return DonutTile(

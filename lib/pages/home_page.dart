@@ -48,6 +48,7 @@ class _HomePageState extends State<HomePage> {
     return DefaultTabController(
       length: myTabs.length,
       child: Scaffold(
+        floatingActionButton: FloatingActionButton(onPressed: (){},child: Icon(Icons.room_service_sharp),),
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           elevation: 0,
@@ -80,52 +81,54 @@ class _HomePageState extends State<HomePage> {
             )
           ],
         ),
-        body: Column(
-          children: [
-            // i want to eat
-            Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 36.0, vertical: 18),
-              child: Row(
-                children: [
-                  Text(
-                    'I want to eat',
-                    style: TextStyle(fontSize: 24, color: Colors.grey[600]),
-                  ),
-                  Text(
-                    ' EAT',
-                    style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
-                  ),
-                ],
+        body: 
+        Column(
+            children: [
+              // i want to eat
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 36.0, vertical: 18),
+                child: Row(
+                  children: [
+                    Text(
+                      'I want to eat',
+                      style: TextStyle(fontSize: 24, color: Colors.grey[600]),
+                    ),
+                    Text(
+                      ' EAT',
+                      style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
               ),
-            ),
-
-            // tab bar
-            TabBar(tabs: myTabs),
-
-            // tab bar view
-            Expanded(
-              child: TabBarView(
-                children: [
-                  // donut page
-                  DonutTab(),
-
-                  // burger page
-                  BurgerTab(),
-
-                  // smoothie page
-                  SmoothieTab(),
-
-                  // pancake page
-                  PancakeTab(),
-
-                  // pizza page
-                  PizzaTab(),
-                ],
-              ),
-            )
-          ],
-        ),
+        
+              // tab bar
+              TabBar(tabs: myTabs),
+        
+              // tab bar view
+              Expanded(
+                child: TabBarView(
+                  children: [
+                    // donut page
+                    DonutTab(),
+        
+                    // burger page
+                    BurgerTab(),
+        
+                    // smoothie page
+                    SmoothieTab(),
+        
+                    // pancake page
+                    PancakeTab(),
+        
+                    // pizza page
+                    PizzaTab(),
+                  ],
+                ),
+              )
+            ],
+          ),
+       
       ),
     );
   }
